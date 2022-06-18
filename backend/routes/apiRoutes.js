@@ -16,7 +16,7 @@ const {
 router.get('/', getRestaurant);
 
 // Get Inventory by Restaurant ID
-router.get('/inventory/:id', getInventory);
+router.get('/inventory/:restaurantId', getInventory);
 
 // Register new Restaurant
 router.post('/new/restaurant', registerRestaurant);

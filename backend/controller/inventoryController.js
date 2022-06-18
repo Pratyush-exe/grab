@@ -28,11 +28,11 @@ const setInventory = asyncHandler(async (req, res) => {
 });
 
 // @desc    Get Restaurant Inventory
-// @route   GET /api/inventory/:id
+// @route   GET /api/inventory/:restaurantId
 // @access  Public
 const getInventory = asyncHandler(async (req, res) => {
   const inventoryItems = await Inventory.find({
-    restaurant: req.params.id,
+    restaurant: req.params.restaurantId,
   });
   res.status(200).json(inventoryItems);
 });
