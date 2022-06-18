@@ -30,10 +30,10 @@ const registerRestaurant = asyncHandler(async (req, res) => {
     throw new Error('Please add all fields');
   }
 
-  // Check if User Already Exists
-  const userExists = await User.findOne({ email });
+  // Check if restaurant Already Exists
+  const restaurantExists = await Restaurant.findOne({ email });
 
-  if (userExists) {
+  if (restaurantExists) {
     res.status(400);
     throw new Error('User already exists');
   }
@@ -68,7 +68,7 @@ const registerRestaurant = asyncHandler(async (req, res) => {
 // @route   POST /login
 // @access  Public
 const loginRestaurant = asyncHandler(async (req, res) => {
-  const restaurant = await restaurant.findOne({
+  const restaurant = await Restaurant.findOne({
     email: req.body.email,
   });
 
