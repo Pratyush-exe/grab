@@ -1,26 +1,40 @@
 const mongoose = require('mongoose');
-const { InventorySchema } = require('./InventoryModel');
 
 const RestaurantSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, 'Please add a name'],
   },
+  email: {
+    type: String,
+    required: [true, 'Please add an email'],
+    unique: true,
+  },
   password: {
     type: String,
     required: [true, 'Please add a password'],
   },
-  inventory: {
-    type: [InventorySchema],
-    required: [false],
+  city: {
+    type: String,
+    required: true,
   },
-  lat: {
-    type: Number,
-    require: true,
+  state: {
+    type: String,
+    required: true,
   },
-  long: {
-    type: Number,
-    require: true,
+  country: {
+    type: String,
+    required: true,
+  },
+  position: {
+    lat: {
+      type: Number,
+      require: true,
+    },
+    long: {
+      type: Number,
+      require: true,
+    },
   },
 });
 

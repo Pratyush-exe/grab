@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const InventorySchema = new mongoose.Schema({
+  restaurant: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'Restaurant',
+  },
   title: {
     type: String,
     required: [true, 'Please add a title'],
@@ -11,4 +16,4 @@ const InventorySchema = new mongoose.Schema({
   },
 });
 
-module.exports = { InventorySchema };
+module.exports = mongoose.model('Inventory', InventorySchema);
