@@ -7,6 +7,7 @@ const {
 } = require('../controller/restaurantController');
 
 const {
+  setInventory,
   getInventory,
   updateInventory,
 } = require('../controller/inventoryController');
@@ -25,5 +26,8 @@ router.post('/login', loginRestaurant);
 
 // Update Restaurant Inventory
 router.put('/update/:id', updateInventory);
+
+// Create Inventory Item
+router.post('/new/inventory', setInventory);
 
 module.exports = router;
