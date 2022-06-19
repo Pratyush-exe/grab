@@ -15,7 +15,7 @@ const Card = ({
   linkedin,
 }) => {
   return (
-    <div className="bg-primary rounded-xl mx-auto max-w-xs mb-8">
+    <div className="bg-primary rounded-2xl mx-auto max-w-xs mb-8  border-4 border-black">
       <img className="rounded-t-xl" src={imgUrl} alt="Profile" />
 
       <div className="py-2 px-4 flex justify-between items-center border-b-2 border-black">
@@ -49,7 +49,7 @@ const Card = ({
 function About() {
   return (
     <div className="max-w-6xl mx-auto">
-      <h1 className="p-4 font-bold text-xl">Our Team</h1>
+      <h1 className="p-4 font-bold text-xl mt-28">Our Team</h1>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {TeamData.map(
           ({

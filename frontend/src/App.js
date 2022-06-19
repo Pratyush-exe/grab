@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import NavBar from './NavBar/NavBar';
 import VenderProfile from './Vender/VenderProfile';
 import About from './About';
+import Why from './Why';
 
 function App() {
   navigator.geolocation.getCurrentPosition(
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/vendor" element={<VenderProfile />} />
         <Route path="/about" element={<About />} />
+        <Route path="/why" element={<Why />} />
       </Routes>
     </>
   );

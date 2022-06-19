@@ -10,7 +10,7 @@ const MySwal = withReactContent(Swal);
 function VenderProfile() {
   // will be received from backend
   const [user, setUser] = useState({
-    name: 'Restaunrant Palace Name',
+    name: 'Restaunrant Name',
     secretKey: 'dsfsdgdsgaafhafd',
     position: [77.1025, 28.7041],
     city: 'somecity',
@@ -21,16 +21,16 @@ function VenderProfile() {
     food: [
       ['foodA', '2 pieces'],
       ['foodB', '3 pieces'],
-      ['foodB', '4 pieces'],
+      ['foodC', '4 pieces'],
       ['foodA', '2 pieces'],
       ['foodB', '3 pieces'],
-      ['foodB', '4 pieces'],
+      ['foodC', '4 pieces'],
       ['foodA', '2 pieces'],
       ['foodB', '3 pieces'],
-      ['foodB', '4 pieces'],
+      ['foodC', '4 pieces'],
       ['foodA', '2 pieces'],
       ['foodB', '3 pieces'],
-      ['foodB', '4 pieces'],
+      ['foodC', '4 pieces'],
     ],
   });
 
@@ -109,10 +109,10 @@ function VenderProfile() {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between m-2 relative">
                 <button
-                  className="rounded-xl border-black border-4 font-semibold px-2 bg-primary"
-                  /* style={{height: "10%", backgroundColor: "#ffdb18"}} */
+                  className="rounded-xl border-black border-4 font-semibold px-2 bg-primary w-1/3 m-2 ml-0"
+                   style={{height: "50px"}}
                   onClick={() => {
                     console.log('clicked');
                     MySwal.fire({
@@ -133,16 +133,12 @@ function VenderProfile() {
                       },
                     });
                   }}
-                >
-                  Add Item
+                >Add Item
                 </button>
-
-                <button className="rounded-xl border-black border-4 font-semibold px-2 bg-primary">
-                  Clear
-                </button>
-                <button className="rounded-xl border-black border-4 font-semibold px-2 bg-primary">
-                  Save
-                </button>
+                <button className="rounded-xl border-black border-4 font-semibold px-2 bg-primary w-1/3 m-2 ml-0"
+                style={{height: "50px"}}> Clear </button>
+                <button className="rounded-xl border-black border-4 font-semibold px-2 bg-primary w-1/3 m-2 ml-0"
+                style={{height: "50px"}}> Save </button>
               </div>
             </div>
             <Map

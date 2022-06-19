@@ -8,12 +8,14 @@ mapboxgl.accessToken = process.env.REACT_APP_MAP_TOKEN
 export default function MapBox({markers, curLoc}) {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  let posDefault = [0, 0] // long, lat
+  let posDefault = [77.1025, 28.7041] // long, lat
   let pos = JSON.parse(localStorage.getItem("posList"))
   console.log("==",pos)
   const [zoom, setZoom] = useState(15);
 
-  let listofMarkers = [[curLoc[0] - 0.001, curLoc[1] - 0.001], [curLoc[0] + 0.001, curLoc[1] + 0.001]] 
+  let listofMarkers = [ [curLoc[0] - 0.005, curLoc[1] - 0.004], [curLoc[0] + 0.002, curLoc[1] + 0.001],
+                        [curLoc[0] - 0.003, curLoc[1] - 0.001], [curLoc[0] + 0.006, curLoc[1] + 0.004],
+                        [curLoc[0] - 0.006, curLoc[1] - 0.005], [curLoc[0] + 0.005, curLoc[1] + 0.001] ] 
   // get from backend
 
   useEffect(() => {

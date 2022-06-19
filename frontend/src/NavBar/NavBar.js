@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
-    <nav className="h-5vh bg-white max-w-6xl mx-auto flex flex-row items-center w-screen justify-between p-4">
+    <nav className="h-5vh bg-white mx-auto flex flex-row items-center w-screen justify-between p-4">
       <div className="flex items-baseline space-x-4">
         <Link
           to="/"
@@ -14,7 +14,7 @@ function Nav() {
       </div>
       <div>
         <Link
-          to="#"
+          to="/why"
           className="text-black font-bold hover:border-2 hover:border-black rounded-md text-sm px-5 py-2"
         >
           WHY?
