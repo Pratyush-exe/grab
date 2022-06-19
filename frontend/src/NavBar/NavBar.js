@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Nav() {
+function Nav(nav) {
   return (
     <div className='h-5vh'  style={{backgroundColor: "white"}}>
       <nav className="">
@@ -19,7 +19,7 @@ function Nav() {
               WHY?
             </a>
             <a
-              href="#"
+              href="https://github.com/vasudutt/grab" target={"_blank"}
               className="text-black font-bold hover:border-2 hover:border-black rounded-md text-sm px-5 py-2">
               CODE
             </a>
