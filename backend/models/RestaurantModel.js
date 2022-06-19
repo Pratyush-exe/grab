@@ -5,14 +5,10 @@ const RestaurantSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please add a name'],
   },
-  email: {
-    type: String,
-    required: [true, 'Please add an email'],
-    unique: true,
-  },
-  password: {
+  secretKey: {
     type: String,
     required: [true, 'Please add a password'],
+    unique: true,
   },
   city: {
     type: String,

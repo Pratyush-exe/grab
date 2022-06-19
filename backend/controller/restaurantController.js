@@ -14,13 +14,12 @@ const getRestaurant = asyncHandler(async (req, res) => {
 // @route   POST /api/new/restaurant
 // @access  Public
 const registerRestaurant = asyncHandler(async (req, res) => {
-  const { name, email, password, city, state, country, position } =
+  const { name, secretKey, city, state, country, position } =
     req.body;
 
   if (
     !name ||
-    !email ||
-    !password ||
+    !secretKey ||
     !city ||
     !state ||
     !country ||
@@ -31,21 +30,16 @@ const registerRestaurant = asyncHandler(async (req, res) => {
   }
 
   // Check if restaurant Already Exists
-  const restaurantExists = await Restaurant.findOne({ email });
+  const restaurantExists = await Restaurant.findOne({ secretKey });
 
   if (restaurantExists) {
     res.status(400);
     throw new Error('User already exists');
   }
 
-  // Hash password
-  const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hash(password, salt);
-
   const restaurant = await Restaurant.create({
     name,
-    email,
-    password: hashedPassword,
+    secretKey,
     city,
     state,
     country,
@@ -56,7 +50,7 @@ const registerRestaurant = asyncHandler(async (req, res) => {
     res.status(201).json({
       _id: restaurant.id,
       name: restaurant.name,
-      email: restaurant.email,
+      secretKey: restaurant.secretKey,
     });
   } else {
     res.status(400);
@@ -69,21 +63,11 @@ const registerRestaurant = asyncHandler(async (req, res) => {
 // @access  Public
 const loginRestaurant = asyncHandler(async (req, res) => {
   const restaurant = await Restaurant.findOne({
-    email: req.body.email,
+    secretKey: req.body.secretKey,
   });
 
   if (!restaurant) {
-    res.status(400).json('Wrong username or password');
-  }
-
-  // validate password
-  const validPassword = await bcrypt.compare(
-    req.body.password,
-    restaurant.password
-  );
-
-  if (!validPassword) {
-    res.status(400).json('Wrong username or password');
+    res.status(400).json("Secret Key doesn't match");
   }
 
   res.status(200).json({
