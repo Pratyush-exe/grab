@@ -41,24 +41,6 @@ function Home() {
                         <IoIosArrowDown className='h-5 text-black' />
                     </div>
                 </div>
-                {/* <div className='flex flex-col justify-evenly h-100px mt-2'>
-                    <div className=' flex flex-row justify-between'>
-                        <input id="inputLong" type="" placeholder='Longitude' className='h-30px border-black rounded-md border pl-1 w-5' ></input>
-                        <input id="inputLat" type="text" placeholder='Latitude' className='h-30px border-black rounded-md border pl-1 w-5' ></input>
-                    </div>
-                    <button type='submit' className='rounded-xl bg-orange-500 h-45px' onClick={() => {
-                        console.log([
-                            parseFloat(document.getElementById("inputLong").value),
-                            parseFloat(document.getElementById("inputLat").value)
-                        ])
-                        localStorage.setItem("posList", JSON.stringify([
-                            parseFloat(document.getElementById("inputLong").value),
-                            parseFloat(document.getElementById("inputLat").value)
-                        ]))
-                        console.log("here")
-                        setLoading(!loading)
-                    }}>Load Location</button>
-                </div> */}
             </div>
         </div></>
     )

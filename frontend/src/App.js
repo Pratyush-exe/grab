@@ -1,6 +1,5 @@
 import Home from "./Home/Home";
 import React, {useEffect} from "react";
-import NavBar from './NavBar/NavBar'
 import VenderProfile from "./Vender/VenderProfile"
 
 function App() {
@@ -10,8 +9,8 @@ function App() {
   
   return (
     <>
-      {/* <Home /> */}
-    <VenderProfile />
+      <Home />
+    {/* <VenderProfile /> */}
     </>
   );
 }
