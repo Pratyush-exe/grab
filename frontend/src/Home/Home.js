@@ -81,6 +81,7 @@ function Home() {
                     <p>3 pieces</p>
                   </div>
                 </div>
+<<<<<<< HEAD
               ))}
             </div>
             <div className="flex flex-row justify-center rounded-xl">
@@ -109,6 +110,11 @@ function Home() {
       </div>
     </>
   );
+=======
+            </div>
+        </div></>
+    )
+>>>>>>> 347e717ec5923c84428187454be8e714b690e37e
 }
 
 export default Home;
