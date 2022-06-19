@@ -3,19 +3,20 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      height: theme => ({
-        "500px": "500px"
+      height: (theme) => ({
+        '500px': '500px',
       }),
-      width: theme => ({
-        "600px": "600px",
-        "400px": "400px"
+      width: (theme) => ({
+        '600px': '600px',
+        '400px': '400px',
       }),
-      fontFamily: theme => ({
-        "ubuntu": "Montserrat"
-      })
+      fontFamily: (theme) => ({
+        ubuntu: 'Montserrat',
+      }),
+      colors: {
+        primary: '#ffdb18',
+      },
     },
   },
-  plugins: [
-    require('tailwind-scrollbar')
-  ],
+  plugins: [require('tailwind-scrollbar')],
 };
