@@ -10,6 +10,7 @@ const {
   setInventory,
   getInventory,
   updateInventory,
+  deleteInventory,
 } = require('../controller/inventoryController');
 
 // Get All Restaurant
@@ -29,5 +30,8 @@ router.put('/update/:id', updateInventory);
 
 // Create Inventory Item
 router.post('/new/inventory', setInventory);
+
+// Delete Inventory Item
+router.delete('/delete/:id', deleteInventory);
 
 module.exports = router;

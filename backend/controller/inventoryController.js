@@ -65,4 +65,25 @@ const updateInventory = asyncHandler(async (req, res) => {
   res.status(200).json(updatedInventoryItem);
 });
 
-module.exports = { getInventory, updateInventory, setInventory };
+// @desc    Delete Inventory Item
+// @route   DELETE /api/delete/:id
+// @access  Public
+const deleteInventory = asyncHandler(async (req, res) => {
+  const inventory = await Inventory.findById(req.params.id);
+
+  if (!inventory) {
+    res.status(400);
+    throw new Error('Item not found');
+  }
+
+  await inventory.remove();
+
+  res.status(200).json({ id: req.params.id });
+});
+
+module.exports = {
+  getInventory,
+  updateInventory,
+  setInventory,
+  deleteInventory,
+};
