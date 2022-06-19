@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import MapBox from './MapBox'
 import {IoIosArrowDown} from 'react-icons/io'
+import NavBar from '../NavBar/NavBar'
 
 function Home() {
     let imgUrl = "https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/content9555.jpg"
@@ -11,6 +12,7 @@ function Home() {
     "wfdfdsffffsf", "wfdfdsf", "wfdfdsf", "wfdfdsf", "wfdfdsf", ] // get from api
 
     return (
+        <><NavBar />
         <div className='h-95vh flex flex-row justify-center items-center'  style={{backgroundColor: "white"}}>
             <MapBox markers={listOfRestaurants} curLoc={JSON.parse(localStorage.getItem("posList"))} />
             <div className='h-95vh w-3/12' style={{padding: "3px", backgroundColor: "white"}}>
@@ -58,7 +60,7 @@ function Home() {
                     }}>Load Location</button>
                 </div> */}
             </div>
-        </div>
+        </div></>
     )
 }
 
